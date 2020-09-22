@@ -1,0 +1,138 @@
+<!-- Instruktion til webbrowser om at vi kører HTML5 -->
+<!DOCTYPE html>
+
+<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
+<html lang="da">
+
+<!-- I <head> har man opsætning - det ser brugeren ikke, men det fortæller noget om siden -->
+<head>
+    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
+    <meta charset="utf-8">
+
+    <!-- Titel som ses oppe i browserens tab mv. -->
+    <title>Dashboard - Zalando</title>
+
+    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/11a5e78038.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse - bliver brugt til responsive websider -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<!-- i <body> har man alt indhold på siden som brugeren kan se -->
+<body>
+    <nav>
+        <div>
+            <img src="images/logo.jpg" alt="zalando logo">
+            <p>Vicki Munk</p>
+        </div>
+        <div id="menu">
+            <i class="fas fa-chart-line"></i>
+            <div id="dropdownmob">
+                <a href="#" class="tdnone"><i class="icon fas fa-home"></i>Home</a>
+                <a href="#" class="tdnone"><i class="icon fas fa-chart-line"></i>Dashboard</a>
+                <a href="#" class="tdnone"><i class="icon fas fa-user"></i>Contact</a>
+                <a href="#" class="tdnone"><i class="icon far fa-calendar-alt"></i>Calendar</a>
+                <a href="#" class="tdnone"><i class="icon fas fa-cog"></i>Settings</a>
+                <a href="#" class="tdnone"><i class="icon far fa-question-circle"></i>Help</a>
+                <a href="#" class="tdnone"><i class="icon fas fa-running"></i>Sign out</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div id="yesterday">
+            <div>
+                <p class="headline">Visitors yesterday</p>
+                <p class="headline">27.849</p>
+            </div>
+            <div>
+                <p class="headline">Turnover yesterday</p>
+                <p class="headline">$39.501,72</p>
+            </div>
+        </div>
+        <div id="graf">
+            <p class="headline">Turnover compared to previous years</p>
+            <img src="images/graf.jpg" alt="graf">
+        </div>
+        <div id="recent">
+            <p class="headline">Recent sales</p>
+            <div>
+                <div>
+                    Items<br><br>
+                    3<br><br>
+                    7<br><br>
+                    1<br><br>
+                    8<br><br>
+                    3<br><br>
+                </div>
+                <div>
+                    Country<br><br>
+                    Canada<br><br>
+                    Ireland<br><br>
+                    U.S.A.<br><br>
+                    Sweden<br><br>
+                    France<br><br>
+                </div>
+                <div>
+                    Amount<br><br>
+                    $217<br><br>
+                    $582<br><br>
+                    $40<br><br>
+                    $602<br><br>
+                    $180<br><br>
+                </div>
+                <div>
+                    Time<br><br>
+                    9/17/20, 8:11<br><br>
+                    9/17/20, 8:08<br><br>
+                    9/17/20, 8:07<br><br>
+                    9/17/20, 8:04<br><br>
+                    9/17/20, 8:01<br><br>
+                </div>
+            </div>
+        </div>
+        <div id="mw">
+            <p class="headline">Most wanted last week</p>
+            <div id="itemone">
+                <div>
+                    NMFLANNY LONG SHACKET<br><br>
+                    $60,14<br><br>
+                    13 pieces sold
+                </div>
+                <img src="images/skjorte.jpg" alt="shacket">
+            </div>
+            <div id="itemtwo">
+                <div>
+                    MIT WEITEM BEIN<br><br>
+                    $31,58<br><br>
+                    12 pieces sold
+                </div>
+                <img src="images/bukser.jpg" alt="bukser">
+            </div>
+            <div id="itemthree">
+                <div>
+                    ONLANN HOOD<br><br>
+                    $52,20<br><br>
+                    10 pieces sold
+                </div>
+                <img src="images/hoodie.jpg" alt="hoodie">
+            </div>
+        </div>
+    </main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function () {
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+@charset "UTF-8";
+* {
+  /* Gælder alt på hele siden */
+  box-sizing: border-box;
+  /* Bokse har altid den størrelse man giver uanset om der tilføjes margen, padding mv. */ }
+
+/* Ovenstående kode kan give problemer ved nogle 3. parts scripts man henter. Men det gør det nemmere at forstå og lave kodning når man starter. */
+body {
+  margin: 0;
+  /* Ingen kanter i siden af browser */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  /* Ingen ydre margen fra overskrifter */
+  padding: 0;
+  /* Ingen indre margen fra overskrifter */ }
+
+ul, ol {
+  margin: 2px 10px 2px 10px;
+  /* Mindre margen på punkter */
+  padding: 0;
+  /* Ingen indre margen fra lister */
+  list-style-position: inside;
+  /* List punkter står på linje */ }
+
+li {
+  margin: 0;
+  /* Ingen ydre margen fra listpunkter */ }
+
+p {
+  margin: 0;
+  /* Ingen ydre margen fra paragraffer */
+  padding: 0;
+  /* Ingen indre margen fra paragraffer */ }
+
+/* Sikrer billeder er responsive */
+img {
+  display: block;
+  /* Billeder er et element (laver linjeskift) */
+  max-width: 100%;
+  /* Bredde må maks fylde 100% */
+  height: auto;
+  /* Højden skal tilpasse sig */ }
+
+.tdnone {
+  text-decoration: none; }
+
+nav {
+  background: #ff6900;
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+  nav div {
+    color: white;
+    text-align: center; }
+    nav div img {
+      margin-bottom: 5px; }
+    nav div .fas {
+      font-size: 30pt; }
+    nav div #dropdownmob {
+      display: none;
+      background: white;
+      position: absolute;
+      right: 0;
+      width: 100vw;
+      height: calc(100vh - 80px);
+      z-index: 1;
+      padding: 20px;
+      text-align: left; }
+      nav div #dropdownmob a {
+        color: black;
+        font-size: 20pt;
+        margin-bottom: 40px; }
+      nav div #dropdownmob .icon {
+        margin-right: 40px;
+        font-size: 20pt; }
+
+#menu:hover #dropdownmob {
+  display: flex;
+  flex-direction: column; }
+
+main {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 20px;
+  margin-right: 20px; }
+  main div {
+    background: #ff6900;
+    padding: 10px;
+    color: black;
+    margin-top: 20px;
+    grid-column: 1 / -1; }
+  main .headline {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px; }
+  main #yesterday {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 0; }
+    main #yesterday div {
+      background: #ff6900;
+      width: 50%;
+      padding-top: 10px; }
+    main #yesterday div:hover {
+      background: #ffa566; }
+    main #yesterday div:first-child {
+      margin-right: 20px; }
+    main #yesterday div p:last-child {
+      color: white;
+      font-size: 20pt; }
+  main #graf, main #recent, main #mw {
+    padding: 10px 10px 20px; }
+  main #recent div {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10pt;
+    padding-bottom: 0;
+    text-align: left; }
+  main #mw {
+    margin-bottom: 40px; }
+    main #mw div {
+      display: flex;
+      justify-content: space-between;
+      font-size: 10pt; }
+      main #mw div div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
+      main #mw div img {
+        height: 150px; }
+
+@media screen and (min-width: 420px) {
+  nav {
+    height: 100vh;
+    width: 150px;
+    left: 0; } }
+
+@media screen and (min-width: 900px) {
+  nav {
+    background: bisque; } }
+
+/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,6 @@
+$computer: "screen and (min-width: 900px)";
+
+@media #{$computer} {
+  nav{background: bisque;}
+
+}

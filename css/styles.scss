@@ -1,0 +1,156 @@
+$primarycolor: #ff6900;
+$secondarycolor: lighten(#ff6900, 20);
+$margin: 20px;
+$padding: 10px;
+$bold: 700;
+
+* { /* Gælder alt på hele siden */
+  box-sizing: border-box; /* Bokse har altid den størrelse man giver uanset om der tilføjes margen, padding mv. */
+}
+
+/* Ovenstående kode kan give problemer ved nogle 3. parts scripts man henter. Men det gør det nemmere at forstå og lave kodning når man starter. */
+
+body {
+  margin: 0; /* Ingen kanter i siden af browser */
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* Ingen ydre margen fra overskrifter */
+  padding: 0; /* Ingen indre margen fra overskrifter */
+}
+
+ul, ol {
+  margin: 2px 10px 2px 10px; /* Mindre margen på punkter */
+  padding: 0; /* Ingen indre margen fra lister */
+  list-style-position: inside; /* List punkter står på linje */
+}
+
+li {
+  margin: 0; /* Ingen ydre margen fra listpunkter */
+}
+
+p {
+  margin: 0; /* Ingen ydre margen fra paragraffer */
+  padding: 0; /* Ingen indre margen fra paragraffer */
+}
+
+/* Sikrer billeder er responsive */
+img {
+  display: block; /* Billeder er et element (laver linjeskift) */
+  max-width: 100%; /* Bredde må maks fylde 100% */
+  height: auto; /* Højden skal tilpasse sig */
+}
+.tdnone{text-decoration: none;}
+@mixin stortekst($stor: 20pt){font-size: $stor;}
+nav{
+  background: $primarycolor;
+  position: fixed;
+  top: 0;
+  height: 80px;
+  width: 100vw;
+  padding: $padding * 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div{
+    color: white;
+    text-align: center;
+    img{margin-bottom: $margin / 4;}
+    .fas{font-size: 30pt}
+    #dropdownmob{
+      display: none;
+      background: white;
+      position: absolute;
+      right: 0;
+      width: 100vw;
+      height: calc(100vh - 80px);
+      z-index: 1;
+      padding: $padding * 2;
+      text-align: left;
+      a{
+        color: black;
+        font-size: 20pt;
+        margin-bottom: $margin * 2;
+      }
+      .icon{
+        margin-right: $margin * 2;
+        font-size: 20pt;
+      }
+    }
+  }
+}
+#menu:hover #dropdownmob{
+  display: flex;
+  flex-direction: column;
+}
+main{
+  margin-top: $margin * 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: $margin;
+  margin-right: $margin;
+  div{
+    background: $primarycolor;
+    padding: $padding;
+    color: black;
+    margin-top: $margin;
+    grid-column: 1 / -1;
+  }
+  .headline{
+    font-weight: $bold;
+    text-align: center;
+    margin-bottom: $margin / 2;
+  }
+  #yesterday{
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 0;
+    & div{
+      background: $primarycolor;
+      width: 50%;
+      padding-top: $padding;
+    }
+    & div:hover{background: $secondarycolor;}
+    & div:first-child{margin-right: $margin;}
+    & div p:last-child{
+      color: white;
+      @include stortekst();
+    }
+  }
+  #graf{
+    padding: $padding $padding $padding * 2;
+  }
+  #recent{
+    @extend #graf;
+    & div{
+      margin: 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 10pt;
+      padding-bottom: 0;
+      text-align: left;
+    }
+  }
+  #mw{
+    @extend #graf;
+    margin-bottom: $margin * 2;
+    & div{
+      display: flex;
+      justify-content: space-between;
+      font-size: 10pt;
+      & div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      img{height: 150px;}
+    }
+  }
+}
+
+@import "tablet";
+@import "computer";
+
