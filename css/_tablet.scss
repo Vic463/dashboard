@@ -1,111 +1,52 @@
 $tablet: "screen and (min-width: 420px)";
 
 @media #{$tablet} {
-  nav{
+  nav {
     height: 100vh;
     width: 150px;
     left: 0;
     flex-direction: column;
-  }
-  nav{
-
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    div{
-      color: $primarycolor;
-      text-align: center;
-      img{margin-bottom: $margin / 4;}
-      .fas{font-size: 30pt}
-      #dropdownmob{
-        display: none;
-        background: white;
-        position: absolute;
-        right: 0;
-        width: 100vw;
-        height: calc(100vh - 80px);
-        z-index: 1;
-        padding: $padding * 2;
-        text-align: left;
-        a{
-          color: black;
-          font-size: 20pt;
-          margin-bottom: $margin * 2;
-        }
-        .icon{
-          margin-right: $margin * 2;
-          font-size: 20pt;
-        }
-      }
-    }
-  }
-  #menu:hover #dropdownmob{
-    display: flex;
-    flex-direction: column;
-  }
-  main{
-    margin-top: $margin * 4;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-left: $margin;
-    margin-right: $margin;
-    div{
-      background: $primarycolor;
-      padding: $padding;
-      color: black;
-      margin-top: $margin;
-      grid-column: 1 / -1;
-    }
-    .headline{
-      font-weight: $bold;
-      text-align: center;
-      margin-bottom: $margin / 2;
-    }
-    #yesterday{
+    padding: $padding * 2;
+    padding-right: 0;
+    div:first-child{margin-right: $padding * 2;}
+    div .menuicon{display: none;}
+    div #dropdownmob{
       display: flex;
-      justify-content: space-between;
-      background: white;
-      padding: 0;
-      & div{
-        background: $primarycolor;
-        width: 50%;
-        padding-top: $padding;
+      flex-direction: column;
+      position: static;
+      background: $primarycolor;
+      left: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: $padding / 2;
+      padding-right: 0;
+      a {@include stortekst(10pt);}
+      a .icon{
+        @include stortekst(10pt);
+        margin-right: $margin;
       }
-      & div:hover{background: $secondarycolor;}
-      & div:first-child{margin-right: $margin;}
-      & div p:last-child{
-        color: white;
-        @include stortekst();
+      a:nth-of-type(2){
+        width: 110%;
+        background: white;
+        border-radius: 8px 0 0 8px;
+        margin: $margin * 1.5 0;
+        padding: $padding * 1.5;
       }
+      a:first-child{margin-bottom: 0;}
+      a:nth-of-type(3){margin-top: 0;}
+      a:last-child{margin-top: $margin * 9;}
     }
-    #graf{
-      padding: $padding $padding $padding * 2;
-    }
-    #recent{
-      @extend #graf;
-      & div{
-        margin: 0;
-        display: flex;
-        justify-content: space-between;
-        font-size: 10pt;
-        padding-bottom: 0;
-        text-align: left;
-      }
-    }
-    #mw{
-      @extend #graf;
-      margin-bottom: $margin * 2;
-      & div{
-        display: flex;
-        justify-content: space-between;
-        font-size: 10pt;
-        & div{
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-        }
-        img{height: 150px;}
-      }
-    }
+  }
+
+}
+/*nav{
+  div{
   }
 }
+#menu:hover #dropdownmob{
+  display: flex;
+  flex-direction: column;
+}*/
