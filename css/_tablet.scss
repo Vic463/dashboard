@@ -33,6 +33,7 @@ $tablet: "screen and (min-width: 420px)";
         background: white;
         border-radius: 8px 0 0 8px;
         margin: $margin * 1.5 0;
+        margin-left: -10%;
         padding: $padding * 1.5;
       }
       a:first-child{margin-bottom: 0;}
@@ -41,9 +42,10 @@ $tablet: "screen and (min-width: 420px)";
     }
   }
   main{
-    width: calc(100vw - 150px);
+    width: auto;
     height: 100vh;
     margin: $margin;
+    margin-left: 150px + $margin;
     #yesterday{
       margin-top: 0;
       div{margin-top: 0;}

@@ -34,6 +34,7 @@ $computer: "screen and (min-width: 900px)";
         border-radius: 8px 0 0 8px;
         margin: $margin * 1.5 0;
         padding: $padding * 1.5;
+        margin-left: -7.5%;
       }
       a:first-child{margin: $margin 0 0;}
       a:nth-of-type(3){margin-top: 0;}
@@ -41,9 +42,10 @@ $computer: "screen and (min-width: 900px)";
     }
   }
   main{
-    width: calc(100vw - 200px);
+    width: auto;
     height: 100vh;
     margin: $margin * 4;
+    margin-left: 200px + $margin * 4;
     grid-template-rows: 1fr 1fr 1fr;
     div{margin-top: $margin * 2;}
     #yesterday{
@@ -62,7 +64,7 @@ $computer: "screen and (min-width: 900px)";
       grid-row: 1 / 4;
       display: flex;
       flex-direction: column;
-      margin-left: $margin * 2;
+      margin-left: $margin * 4;
       margin-top: 0;
       height: auto;
       & div{
