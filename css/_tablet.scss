@@ -40,13 +40,22 @@ $tablet: "screen and (min-width: 420px)";
       a:last-child{margin-top: $margin * 9;}
     }
   }
+  main{
+    width: calc(100vw - 150px);
+    height: 100vh;
+    margin: $margin;
+    #yesterday{
+      margin-top: 0;
+      div{margin-top: 0;}
+    }
+    #mw{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      .headline{grid-column: 1 / -1;}
+      #itemone{grid-column: 1 / 2;}
+      #itemtwo{grid-column: 2 / 3;}
+      #itemthree{grid-column: 3 / 4;}
+    }
+  }
 
 }
-/*nav{
-  div{
-  }
-}
-#menu:hover #dropdownmob{
-  display: flex;
-  flex-direction: column;
-}*/

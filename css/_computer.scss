@@ -1,6 +1,86 @@
 $computer: "screen and (min-width: 900px)";
 
 @media #{$computer} {
-  nav{background: bisque;}
+  nav {
+    height: 100vh;
+    width: 200px;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $padding * 2 $padding * 2 $padding;
+    padding-right: 0;
+    div:first-child{margin-right: $padding * 2;}
+    div .menuicon{display: none;}
+    div #dropdownmob{
+      display: flex;
+      flex-direction: column;
+      position: static;
+      background: $primarycolor;
+      left: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      margin: 0;
+      padding: $padding / 2;
+      padding-right: 0;
+      a {@include stortekst(15pt);}
+      a .icon{
+        @include stortekst(15pt);
+        margin-right: $margin;
+      }
+      a:nth-of-type(2){
+        width: 110%;
+        background: white;
+        border-radius: 8px 0 0 8px;
+        margin: $margin * 1.5 0;
+        padding: $padding * 1.5;
+      }
+      a:first-child{margin: $margin 0 0;}
+      a:nth-of-type(3){margin-top: 0;}
+      a:last-child{margin-top: $margin * 5;}
+    }
+  }
+  main{
+    width: calc(100vw - 200px);
+    height: 100vh;
+    margin: $margin * 4;
+    grid-template-rows: 1fr 1fr 1fr;
+    div{margin-top: $margin * 2;}
+    #yesterday{
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+      margin-top: 0;
+      div{
+        margin-top: 0;
+        max-width: 250px;
+      }
+    }
+    #graf{grid-column: 1 / 2; grid-row: 2 / 3;}
+    #recent{grid-column: 1 / 2; grid-row: 3 / 4;}
+    #mw{
+      grid-column: 2 / 3;
+      grid-row: 1 / 4;
+      display: flex;
+      flex-direction: column;
+      margin-left: $margin * 2;
+      margin-top: 0;
+      height: auto;
+      & div{
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid black;
+        & div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-top: 0;
+          @include stortekst(13pt);
+          border-bottom: none;
+        }
+        &:last-child{border-bottom: none;}
+        img{height: 150px;}
+      }
+    }
+  }
 
 }
